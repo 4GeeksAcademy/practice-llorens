@@ -20,3 +20,16 @@ def handle_hello():
     }
 
     return jsonify(response_body), 200
+
+@api.route('/login', methods=['POST'])
+def logear_usuario():
+
+    user: request.json.get('Usuario', None)
+    passwd: request.json.get('Contrasena', None)
+
+    if not user and not passwd:
+        return jsonify({"Error":"Tienes que introducir todos los datos"}), 400
+
+    
+
+
